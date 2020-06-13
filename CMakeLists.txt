@@ -131,7 +131,8 @@ include_directories(. include gl-parts/include)
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     # MSVC slowed down by many warnings
-    add_definitions(/W1)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W1")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W1")
 else()
     add_subdirectory(scrnsave)
 endif()
